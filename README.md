@@ -11,3 +11,11 @@ NAS-Nav导航仿iCloud风格
 - 本项目搬运的是`仿iCloud界面_3.7z`
 
 - 原文链接：[https://wrdan.com/share/nas_cloud.html](https://wrdan.com/share/nas_cloud.html)
+
+## 说明
+
+在原作者的基础上做了一点更新
+
+- 更新了在手机设备上浏览的优化
+- 添加了jQuery的CDN(默认使用,可换回原来的)
+- 其他一些说明在`index.html`文件里已指出
