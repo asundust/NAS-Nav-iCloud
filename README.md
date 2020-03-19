@@ -19,3 +19,13 @@ NAS-Nav导航仿iCloud风格
 - 更新了在手机设备上浏览的优化
 - 添加了jQuery的CDN(默认使用,可换回原来的)
 - 其他一些说明在`index.html`文件里已指出
+
+## 下载
+
+- 下载后可以删除`.gitignore`、`README.md`文件和`.git`文件夹
+- 里面的`112-128-空白模板.psd`是用于制作图标的，默认的demo图片规则是112*112留边6px，可以用无留边图标塞入到这个模板里，快速制作
+- 无图标来源?[好孩子看不见](http://zhangweijie.cn/hq-icon/)
+
+## 教程
+
+- 太懒了，自己不想写，随便找了一篇：[https://post.smzdm.com/p/adwlg5rn](https://post.smzdm.com/p/adwlg5rn/?send_by=8069883039)
