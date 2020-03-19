@@ -22,7 +22,7 @@ NAS-Nav导航仿iCloud风格
 
 ## 下载
 
-- 下载后可以删除`.gitignore`、`README.md`文件和`.git`文件夹
+- 下载后可以删除`.gitattributes`、`.gitignore`、`README.md`文件和`.git`文件夹
 - 里面的`112-128-空白模板.psd`是用于制作图标的，默认的demo图片规则是112*112留边6px，可以用无留边图标塞入到这个模板里，快速制作
 - 无图标来源?[好孩子看不见](http://zhangweijie.cn/hq-icon/)
 
