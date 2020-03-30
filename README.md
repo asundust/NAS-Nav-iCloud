@@ -1,6 +1,6 @@
 # NAS-Nav-iCloud
 
-NAS-Nav导航仿iCloud风格
+NAS-Nav导航仿iCloud风格 效果[访问Demo](https://asundust.github.io/nav/)
 
 同步[github.com](https://github.com/asundust/NAS-Nav-iCloud)和[gitee.com](https://gitee.com/asundust/NAS-Nav-iCloud)
 
