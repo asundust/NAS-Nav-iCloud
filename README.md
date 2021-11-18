@@ -22,6 +22,12 @@ NAS-Nav导航仿iCloud风格 效果[访问Demo](https://asundust.github.io/nav/)
 - 增加了内外网自动切换的功能(使用的是 [https://ifconfig.me/ip](https://ifconfig.me/ip) 的服务)， 默认没启用（不启用请删除`lan.php`文件），需要启用在`index.html`
   文件里的257行的注释打开
 
+## 自动内外网切换的PHP套件相关设置
+
+- 群晖（我这边是DSM7.0）的设置方法，去套件中心安装PHP，理论上支持任意版本的，我这边装了PHP7.4，以下按照PHP7.4来说明
+- `Web Station` - `网页服务门户` - `(双击打开导航站)` - `(PHP选项选择PHP7.4)` - `保存`
+- `Web Station` - `脚本语言设置` - `(双击PHP7.4)` - `扩展名` - `(找到curl并打上勾)` - `保存`
+
 ## 下载
 
 - 下载后可以删除`.gitattributes`、`.gitignore`、`README.md`文件和`.git`文件夹
