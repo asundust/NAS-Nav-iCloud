@@ -31,8 +31,12 @@ NAS-Nav导航仿iCloud风格 效果[访问Demo](https://asundust.github.io/nav/)
 ## 下载
 
 - 下载后可以删除`.gitattributes`、`.gitignore`、`README.md`文件和`.git`文件夹
+
+## 图标制作
 - 里面的`112-128-空白模板.psd`是用于制作图标的，默认的demo图片规则是112*112留边6px，可以用无留边图标塞入到这个模板里，快速制作
 - 无图标来源? [~~好孩子看不见1~~](http://zhangweijie.cn/hq-icon/) [好孩子看不见2](https://bendodson.com/projects/itunes-artwork-finder/) [好孩子看不见3](http://submit.icoicon.com/)
+- 一些[图标提取方法网站](https://sspai.com/post/40682)
+- 提取的图片是非圆角的，怎么办?（待更新）
 
 ## 教程
 
