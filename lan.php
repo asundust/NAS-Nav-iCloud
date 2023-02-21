@@ -11,12 +11,19 @@ function curl_get($url)
     return curl_exec($ch);
 }
 
+function startsWith(string $string, string $subString): bool
+{
+    return str_starts_with($string, $subString);
+}
+
 try {
     $url = 'https://ifconfig.me/ip';
     $server_ip = curl_get($url);
-    $lan = $_SERVER['REMOTE_ADDR'] == $server_ip;
-    $result = ['lan' => $lan, 'ip' => ['client' => $_SERVER['REMOTE_ADDR'], 'server' => $server_ip]];
+    $client_ip = $_SERVER['REMOTE_ADDR'];
+    //lan:是否是本地
+    $lan = startsWith($client_ip, "192.") || $client_ip == $server_ip;
+    $result = ['lan' => $lan, 'ip' => ['client' => $client_ip, 'server' => $server_ip]];
 } catch (Exception $exception) {
-    $result = ['lan' => false, 'ip' => ['client' => $_SERVER['REMOTE_ADDR'], 'server' => '']];
+    $result = ['lan' => false, 'ip' => ['client' => $client_ip, 'server' => '']];
 }
 die(json_encode($result));
