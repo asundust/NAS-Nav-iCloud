@@ -14,10 +14,11 @@ function curl_get($url)
 }
 
 // 是否局域网IP
-function is_lan($client_ip) {
+function getLan1($client_ip)
+{
     $lanIpSubs = [
         '10.',
-        '127.',
+        '127.0.0.1',
         '172.16.',
         '172.17.',
         '172.18.',
@@ -44,14 +45,48 @@ function is_lan($client_ip) {
     return false;
 }
 
+// 是否能访问主机IP
+function getLan2()
+{
+    $url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://') . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'];
+    $content = curl_get($url);
+    if (strpos($content, $_SERVER['SCRIPT_NAME']) !== false) {
+        return true;
+    }
+    return false;
+}
+
 // 内网环境判断
+$client_ip = $_SERVER['REMOTE_ADDR'];
 try {
+    // 是否局域网IP
+    $lan1 = getLan1($client_ip);
+    // 判断是否能访问内网IP，应用场景例如为VPN连入内网，不需要可注释
+    $lan2 = getLan2();
+    // 获取主机外网IP判断
     $url = 'https://ifconfig.me/ip';
     $server_ip = curl_get($url);
-    $client_ip = $_SERVER['REMOTE_ADDR'];
-    $lan = is_lan($client_ip) || $client_ip == $server_ip;
-    $result = ['lan' => $lan, 'ip' => ['client' => $client_ip, 'server' => $server_ip]];
+    $lan3 = $client_ip == $server_ip;
+
+    // 不需要哪种逻辑判断，在下面就把该选项注释
+    $lanArray = [
+        $lan1,
+        $lan2,
+        $lan3,
+    ];
+
+    // 最终结果判断
+    $lan = false;
+    foreach ($lanArray as $lanValue) {
+        if ($lanValue) {
+            $lan = true;
+            break;
+        }
+    }
+    // 返回消息
+    $result = ['lan' => $lan, 'ip' => ['client' => $client_ip, 'server' => $server_ip ?? '']];
 } catch (Exception $exception) {
+    // 默认消息
     $result = ['lan' => false, 'ip' => ['client' => $client_ip, 'server' => '']];
 }
 die(json_encode($result));
