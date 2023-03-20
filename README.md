@@ -19,7 +19,7 @@ NAS-Nav导航仿iCloud风格 效果[访问Demo](https://asundust.github.io/nav/)
 - 更新了在手机设备上浏览的优化
 - 添加了jQuery的CDN(默认使用,可换回原来的)
 - 其他一些说明在`index.html`文件里已指出
-- 增加了内外网自动切换的功能(使用的是 [https://ifconfig.me/ip](https://ifconfig.me/ip) 的服务)， 默认没启用（不启用请删除`lan.php`文件），需要启用在`index.html`
+- 增加了内外网自动切换的功能(使用的是 [https://ifconfig.me/ip](https://ifconfig.me/ip) 的服务，内置还加入了其他逻辑条件来判断是否在内网，详情见该文件)， 默认没启用（不启用请删除`lan.php`文件），需要启用在`index.html`
   文件里的257行的注释打开
 
 ## 自动内外网切换的PHP套件相关设置
