@@ -56,27 +56,39 @@ function canLan()
     return false;
 }
 
+// debug
+$isDebug = false;
+
 // 内网环境判断
 $client_ip = $_SERVER['REMOTE_ADDR'];
 try {
     // 是否局域网IP
     $result = isLanIp($client_ip);
+    $fun = 'isLanIp';
     if ($result) {
 
         // 获取主机外网IP判断
         $url = 'https://ifconfig.me/ip';
         $server_ip = curl_get($url);
         $result = $client_ip == $server_ip;
+        $fun = 'clientAndServer';
         if (!$result) {
 
             // 判断是否能访问内网IP，应用场景例如为VPN连入内网，不需要可注释
             $result = canLan();
+            $fun = 'canLan';
         }
     }
     // 返回消息
     $result = ['lan' => $result, 'ip' => ['client' => $client_ip, 'server' => isset($server_ip) ? $server_ip : '']];
+    if ($isDebug) {
+        $result['fun'] = $fun;
+    }
 } catch (Exception $exception) {
     // 默认消息
     $result = ['lan' => false, 'ip' => ['client' => $client_ip, 'server' => '']];
+    if ($isDebug) {
+        $result['exception'] = $exception->getMessage();
+    }
 }
 die(json_encode($result));
