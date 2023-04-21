@@ -41,5 +41,5 @@ NAS-Nav导航仿iCloud风格 效果[访问Demo](https://asundust.github.io/nav/)
 ## 教程
 - 太懒了，自己不想写，随便找了一篇：[https://post.smzdm.com/p/adwlg5rn](https://post.smzdm.com/p/adwlg5rn/?send_by=8069883039)
 
-### License
+## License
 [The MIT License (MIT)](https://opensource.org/licenses/MIT)
