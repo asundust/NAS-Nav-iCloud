@@ -65,7 +65,7 @@ try {
     // 是否局域网IP
     $result = isLanIp($client_ip);
     $fun = 'isLanIp';
-    if ($result) {
+    if (!$result) {
 
         // 获取主机外网IP判断
         $url = 'https://ifconfig.me/ip';
