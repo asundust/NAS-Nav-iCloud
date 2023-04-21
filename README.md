@@ -28,9 +28,9 @@ NAS-Nav导航仿iCloud风格 效果[访问Demo](https://asundust.github.io/nav/)
 - `Web Station` - `网页服务门户` - `(双击打开导航站)` - `(PHP选项选择PHP7.4)` - `保存`
 - `Web Station` - `脚本语言设置` - `(双击PHP7.4)` - `扩展名` - `(找到curl并打上勾)` - `保存`
 
-## 下载
+## 下载&使用
 
-- 下载后可以删除`.gitattributes`、`.gitignore`、`README.md`文件和`.git`文件夹
+- 下载后只留下`web`文件夹下的文件，其他文件都可以删除掉。
 
 ## 图标制作
 - 里面的`112-128-空白模板.psd`是用于制作图标的，默认的demo图片规则是112*112留边6px，可以用无留边图标塞入到这个模板里，快速制作
