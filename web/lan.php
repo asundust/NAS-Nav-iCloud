@@ -71,11 +71,11 @@ try {
         $server_ip = curl_get($url);
         $result = $client_ip == $server_ip;
         $fun = 'clientAndServer';
-        if (!$result) {
-            // // 判断是否能访问内网IP，应用场景例如为VPN连入内网，不需要可注释
-            // $result = canLan();
-            // $fun = 'canLan';
-        }
+        // if (!$result) {
+        //     // 判断是否能访问内网IP，应用场景例如为VPN连入内网，不需要可注释
+        //     $result = canLan();
+        //     $fun = 'canLan';
+        // }
     }
     // 返回消息
     $result = ['lan' => $result, 'ip' => ['client' => $client_ip, 'server' => isset($server_ip) ? $server_ip : '']];
