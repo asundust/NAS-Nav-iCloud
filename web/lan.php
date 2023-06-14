@@ -45,16 +45,16 @@ function isLanIp($client_ip)
     return false;
 }
 
-// 是否能访问主机IP
-function canLan()
-{
-    $url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://') . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'];
-    $content = curl_get($url);
-    if (strpos($content, $_SERVER['SCRIPT_NAME']) !== false) {
-        return true;
-    }
-    return false;
-}
+// // 是否能访问主机IP
+// function canLan()
+// {
+//     $url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://') . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'];
+//     $content = curl_get($url);
+//     if (strpos($content, $_SERVER['SCRIPT_NAME']) !== false) {
+//         return true;
+//     }
+//     return false;
+// }
 
 // debug
 $isDebug = false;
@@ -66,17 +66,15 @@ try {
     $result = isLanIp($client_ip);
     $fun = 'isLanIp';
     if (!$result) {
-
         // 获取主机外网IP判断
         $url = 'https://ifconfig.me/ip';
         $server_ip = curl_get($url);
         $result = $client_ip == $server_ip;
         $fun = 'clientAndServer';
         if (!$result) {
-
-            // 判断是否能访问内网IP，应用场景例如为VPN连入内网，不需要可注释
-            $result = canLan();
-            $fun = 'canLan';
+            // // 判断是否能访问内网IP，应用场景例如为VPN连入内网，不需要可注释
+            // $result = canLan();
+            // $fun = 'canLan';
         }
     }
     // 返回消息
