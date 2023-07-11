@@ -352,18 +352,35 @@
 </div>
 </body>
 <!--以下代码为内外网自动切换功能，如需要请打开注释-->
-<!--<script type="text/javascript">
-  $(function () {
-    $.ajax({
-      'url': './lan.php',
-      type:"get",
-      dataType:"json",
-      success: function(result) {
-        if (result.lan) {
-          $('#qieh').click();
-        }
-      }
+<script type="text/javascript">
+    $(function () {
+        $.ajax({
+            'url': './lan.php',
+            type: 'get',
+            dataType: 'json',
+            success: function (result) {
+                console.log(result);
+                if (result['lan']) {
+                    $('#qieh').click();
+                } else {
+                    if (result['try_can_lan']['try_lan_status']) {
+                        $.ajax({
+                            'url': result['try_can_lan']['lan_address'] + '/can_lan.php',
+                            type: 'get',
+                            dataType: 'jsonp',
+                            success: function (result) {
+                                console.log(result);
+                                if (result['lan']) {
+                                    $('#qieh').click();
+                                } else {
+                                    console.log(result);
+                                }
+                            }
+                        });
+                    }
+                }
+            }
+        });
     });
-  });
-</script>-->
+</script>
 </html>
