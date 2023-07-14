@@ -355,25 +355,21 @@
 <script type="text/javascript">
     $(function () {
         $.ajax({
-            'url': './lan.php',
+            'url': './lan.php?type=base',
             type: 'get',
             dataType: 'json',
             success: function (result) {
-                console.log(result);
                 if (result['lan']) {
                     $('#qieh').click();
                 } else {
                     if (result['try_can_lan']['try_lan_status']) {
                         $.ajax({
-                            'url': result['try_can_lan']['lan_address'] + '/can_lan.php',
+                            'url': result['try_can_lan']['lan_address'] + '/lan.php?type=try_lan',
                             type: 'get',
                             dataType: 'jsonp',
                             success: function (result) {
-                                console.log(result);
                                 if (result['lan']) {
                                     $('#qieh').click();
-                                } else {
-                                    console.log(result);
                                 }
                             }
                         });
