@@ -46,18 +46,16 @@ function isLanIp($client_ip)
 }
 
 // 获取内网地址
-function getLanService($tryLanHttps)
+function getLanService()
 {
-    // return ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://') . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'];
-    return ($tryLanHttps ? 'https://' : 'http://') . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'];
+    return ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://') . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'];
 }
 
 // debug开关
-$isDebug = true;
+$isDebug = false;
 
 // 变量
 $tryLanStatus = true; // 尝试内网访问开关（判断是否能访问内网IP，应用场景例如为VPN连入内网）
-$tryLanHttps = false;  // 尝试内网访问是否HTTPS（暂时无法判断服务段是否HTTPS，采用变量控制，一般内网IP下都是HTTP）
 
 // 函数入口
 $type = isset($_GET['type']) ? $_GET['type'] : 'base';
@@ -84,7 +82,7 @@ if ($type == 'base') {
             ],
             'try_can_lan' => [
                 'try_lan_status' => $tryLanStatus,
-                'lan_address' => getLanService($tryLanHttps),
+                'lan_address' => getLanService(),
             ]
         ];
         if ($isDebug) {
