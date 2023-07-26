@@ -20,8 +20,7 @@
       body {
         overflow: auto;
         /*background-size: cover;*/
-        /*background: url(img/background.jpg) no-repeat center top;*/
-        /*background-attachment: fixed;*/
+        /*background: url(img/background.jpg) no-repeat fixed center top;*/
       }
 
       /*以下补充样式用于修复手机浏览下的一些体验*/
@@ -349,8 +348,8 @@
     </div>
 </div>
 </body>
-<!--以下代码为内外网自动切换功能，如需要请打开注释-->
-<!--<script type="text/javascript">
+<!--以下代码为内外网自动切换功能，如不需要请删除即可-->
+<script type="text/javascript">
     $(function () {
         $.ajax({
             'url': './lan.php?type=base',
@@ -376,5 +375,5 @@
             }
         });
     });
-</script>-->
+</script>
 </html>

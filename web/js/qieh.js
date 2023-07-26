@@ -19,7 +19,7 @@ document.write(_LoadingHtml);
 document.onreadystatechange = completeLoading;
 
 function completeLoading() {
-    if (document.readyState == "complete") {
+    if (document.readyState === "complete") {
         var loadingMask = document.getElementById('loadingDiv');
         loadingMask.parentNode.removeChild(loadingMask)
     }
