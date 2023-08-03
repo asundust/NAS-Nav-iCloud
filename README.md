@@ -20,6 +20,7 @@ NAS-Nav导航仿iCloud风格 效果[访问Demo](https://asundust.github.io/nav/)
 - 在引入资源的位置添加了可以使用CDN资源的提示，有两处，详情见文件`index.html`
 - 其他一些说明在`index.html`文件和`lan.php`里已指出，调整参数只需要更改参数值即可
 - 增加了内外网自动切换的功能(使用的是 [https://ifconfig.me/ip](https://ifconfig.me/ip) 的服务，内置还加入了其他逻辑条件来判断是否在内网，详情见文件`index.html`)
+- 为了最大兼容度，开发内外网自动切换的功能是基于PHP5.3的语法提示，理论上最低支持为PHP5.3，测试通过的版本为PHP7.4+，其他的没测试过，理论上没什么问题，提交PR的建议请基于PHP5.3的语法
 
 ## 自动内外网切换的PHP套件相关设置
 
