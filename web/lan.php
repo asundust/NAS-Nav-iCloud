@@ -3,7 +3,7 @@
 // CURL请求
 function curl_get($url)
 {
-    $headerArray = ["Content-type:application/json;", "Accept:application/json"];
+    $headerArray = array("Content-type:application/json;", "Accept:application/json");
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -16,7 +16,7 @@ function curl_get($url)
 // 是否局域网IP
 function isLanIp($client_ip)
 {
-    $lanIpSubs = [
+    $lanIpSubs = array(
         '10.',
         '127.0.0.1',
         '172.16.',
@@ -35,8 +35,8 @@ function isLanIp($client_ip)
         '172.29.',
         '172.30.',
         '172.31.',
-        '192.168.',
-    ];
+        '192.168.'
+    );
     foreach ($lanIpSubs as $lanIpSub) {
         if (strpos($client_ip, $lanIpSub) !== false) {
             return true;
@@ -74,23 +74,23 @@ if ($type == 'base') {
             $fun = 'clientAndServer';
         }
         // 返回消息
-        $result = [
+        $result = array(
             'lan' => $result,
-            'ip' => [
+            'ip' => array(
                 'client' => $client_ip,
                 'server' => isset($server_ip) ? $server_ip : '',
-            ],
-            'try_can_lan' => [
+            ),
+            'try_can_lan' => array(
                 'try_lan_status' => $tryLanStatus,
                 'lan_address' => getLanService(),
-            ]
-        ];
+            )
+        );
         if ($isDebug) {
             $result['fun'] = $fun;
         }
     } catch (Exception $exception) {
         // 默认消息
-        $result = ['lan' => false];
+        $result = array('lan' => false);
         if ($isDebug) {
             $result['exception'] = $exception->getMessage();
         }
@@ -98,15 +98,15 @@ if ($type == 'base') {
     die(json_encode($result));
 } else if ($type == 'try_lan') {
     // 能访问代表为内网服务可用
-    $data = [
-        'lan' => true,
-    ];
+    $data = array(
+        'lan' => true
+    );
     $jsonData = json_encode($data);
     $callback = $_GET['callback'];
     header('Content-Type: application/javascript');
     echo $callback . '(' . $jsonData . ');';
 } else {
     // 其他情况均为错误
-    $result = ['error_message' => 'Type类型错误'];
+    $result = array('error_message' => 'Type类型错误');
     die(json_encode($result));
 }
