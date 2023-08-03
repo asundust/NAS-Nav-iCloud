@@ -1,6 +1,10 @@
 <?php
 
-// CURL请求
+/**
+ * CURL请求
+ * @param $url
+ * @return bool|string
+ */
 function curl_get($url)
 {
     $headerArray = array("Content-type:application/json;", "Accept:application/json");
@@ -13,7 +17,11 @@ function curl_get($url)
     return curl_exec($ch);
 }
 
-// 是否局域网IP
+/**
+ * 是否局域网IP
+ * @param $client_ip
+ * @return bool
+ */
 function isLanIp($client_ip)
 {
     $lanIpSubs = array(
@@ -45,7 +53,10 @@ function isLanIp($client_ip)
     return false;
 }
 
-// 获取内网地址
+/**
+ * 获取内网地址
+ * @return string
+ */
 function getLanService()
 {
     return ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https://' : 'http://') . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'];
@@ -57,7 +68,7 @@ $isDebug = false;
 // 变量
 $tryLanStatus = true; // 尝试内网访问开关（判断是否能访问内网IP，应用场景例如为VPN连入内网）
 
-// 函数入口
+// 请求入口
 $type = isset($_GET['type']) ? $_GET['type'] : 'base';
 if ($type == 'base') {
     // 客户端IP
