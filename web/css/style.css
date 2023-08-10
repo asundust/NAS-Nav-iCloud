@@ -3315,9 +3315,7 @@ body {
     /*background-size:cover;
     background: url(../img/background.jpg) no-repeat;
     background-attachment: fixed;*/
-    background: -webkit-linear-gradient(315deg, #00C4FF, #9D1BB2) no-repeat fixed;
     background: linear-gradient(135deg, #00C4FF, #9D1BB2) no-repeat fixed;
-    overflow: hidden;
     font-family: 'Helvetica Neue', 'Microsoft Yahei', SimHei, sans-serif
 }
 
@@ -3799,23 +3797,29 @@ ul li a strong {
 @media screen and (min-width: 1200px) {
     #wrap {
         width: 1024px;
-        height: 900px
+        height: 100vh;
     }
 }
 
 @media screen and (min-width: 960px) and (max-width: 1199px) {
     #wrap {
-        width: 1024px
+        width: 1024px;
+        height: 100vh;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
     #wrap {
-        width: 750px
+        width: 750px;
+        height: 100vh;
     }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+    #wrap {
+        width: 550px;
+        height: 100vh;
+    }
     .app ul li a img {
         width: 96px;
         height: 96px
@@ -3828,6 +3832,11 @@ ul li a strong {
 }
 
 @media only screen and (max-width: 479px) {
+    #wrap {
+        width: 400px;
+        height: 100vh;
+    }
+
     .t op {
         position: relative;
         top: 50px;

@@ -18,7 +18,6 @@
       /*背景图设置,设置路径在"css/style.css"下的3315行开始,默认关闭*/
       /*也可以直接打开下面注释直接覆盖原生的渐变色背景,建议打开背景图之后注释原生的3318和3319行渐变色背景样式*/
       body {
-        overflow: auto;
         /*background-size: cover;*/
         /*background: url(img/background.jpg) no-repeat fixed center top;*/
       }
@@ -61,6 +60,9 @@
         div ul li {
           width: 33.33%;
         }
+        body {
+          overflow: auto;
+        }
       }
 
       @media only screen and (min-width: 350px) and (max-width: 479px) {
@@ -71,8 +73,8 @@
     </style>
 </head>
 <body>
-<div id="particles-js" style="position:absolute; top: 0; z-index: -1; width: 100%;height: 100%;">
-    <canvas class="particles-js-canvas-el" height="960" style="width: 100%; height: 100%;" width="1303"></canvas>
+<div id="particles-js" style="position:absolute; top: 0; z-index: 0; width: 100%;height: 100%;">
+    <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
 </div>
 <script>particlesJS("particles-js", {
   particles: {
