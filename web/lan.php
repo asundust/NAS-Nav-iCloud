@@ -118,6 +118,6 @@ if ($type == 'base') {
     echo $callback . '(' . $jsonData . ');';
 } else {
     // 其他情况均为错误
-    $result = array('error_message' => 'Type类型错误');
+    $result = array('exception' => 'Type类型错误');
     die(json_encode($result));
 }
