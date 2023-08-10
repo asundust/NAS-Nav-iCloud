@@ -3312,11 +3312,10 @@ body {
     overflow: hidden;
     height: 100%;
     font-size: 100%;
-    /*background-size:cover;
-    background: url(../img/background.jpg) no-repeat;
-    background-attachment: fixed;*/
+    /*background-size: cover;*/
+    /*background: url(img/background.jpg) no-repeat fixed center top;*/
     background: linear-gradient(135deg, #00C4FF, #9D1BB2) no-repeat fixed;
-    font-family: 'Helvetica Neue', 'Microsoft Yahei', SimHei, sans-serif
+    font-family: 'Helvetica Neue', 'Microsoft Yahei', SimHei, sans-serif;
 }
 
 #wrap {
@@ -3815,47 +3814,82 @@ ul li a strong {
     }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 480px) and (max-width: 767px) {
     #wrap {
         width: 550px;
         height: 100vh;
     }
-    .app ul li a img {
-        width: 96px;
-        height: 96px
-    }
 
-    div ul li a, div ul li a strong, ul li {
-        display: block;
-        width: 96px
-    }
-}
-
-@media only screen and (max-width: 479px) {
-    #wrap {
-        width: 400px;
-        height: 100vh;
-    }
-
-    .t op {
+    #top {
         position: relative;
         top: 50px;
         left: 0;
         text-align: center
     }
 
+    .app ul:first-child {
+        margin-top: 50px;
+    }
+
+    .app ul li a {
+        width: 141px;
+        height: 141px;
+    }
+
     .app ul li a img {
-        width: 64px;
-        height: 64px
+        width: 96px;
+        height: 96px
     }
 
     div ul li a, ul li {
         display: block;
-        width: 64px
+        width: 96px;
     }
 
     div ul li a strong {
-        width: 70px
+        width: 141px;
+    }
+
+    ul li {
+        list-style-type: none;
+        float: left;
+        margin: 0 0 15px 25px
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    #wrap {
+        height: 100vh;
+    }
+
+    #top {
+        position: relative;
+        top: 50px;
+        left: 0;
+        text-align: center
+    }
+
+    .app ul:first-child {
+        margin-top: 50px;
+    }
+
+    .app ul li a {
+        width: 141px;
+        height: 141px;
+    }
+
+    .app ul li a img {
+        width: 64px;
+        height: 64px;
+    }
+
+    div ul li a, ul li {
+        display: block;
+        width: 64px;
+    }
+
+    div ul li a strong {
+        width: 70px;
     }
 
     ul li {
