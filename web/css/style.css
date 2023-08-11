@@ -3802,14 +3802,14 @@ ul li a strong {
 
 @media screen and (min-width: 960px) and (max-width: 1199px) {
     #wrap {
-        width: 1024px;
+        width: 1000px;
         height: 100vh;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
     #wrap {
-        width: 750px;
+        width: 670px;
         height: 100vh;
     }
 }
@@ -3857,7 +3857,7 @@ ul li a strong {
     }
 }
 
-@media only screen and (max-width: 479px) {
+@media only screen and (min-width: 350px) and (max-width: 479px) {
     #wrap {
         height: 100vh;
     }
@@ -3871,6 +3871,11 @@ ul li a strong {
 
     .app ul:first-child {
         margin-top: 50px;
+    }
+
+    .app ul li {
+        display: flex;
+        margin: 0 0 0 0;
     }
 
     .app ul li a {
@@ -3889,7 +3894,7 @@ ul li a strong {
     }
 
     div ul li a strong {
-        width: 70px;
+        width: 96px;
     }
 
     ul li {
@@ -3897,8 +3902,36 @@ ul li a strong {
         float: left;
         margin: 0 0 15px 25px
     }
+
+    #footer {
+        height: unset;
+    }
+
+    .footer-contents {
+        position: unset;
+    }
+
+    .footer-contents .links .line {
+        margin-top: 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
 }
 
+@media only screen and (min-width: 350px) and (max-width: 479px) {
+    div ul li {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 349px) {
+    div ul li {
+        width: 33.33%;
+    }
+    body {
+        overflow: auto;
+    }
+}
 
 .text-js {
     opacity: 0;

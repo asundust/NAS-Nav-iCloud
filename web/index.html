@@ -14,7 +14,7 @@
     <script src="js/particles.min.js"></script>
     <script src="js/font.js"></script>
     <title>NasHomeCloud</title>
-    <style type="text/css">
+    <style>
       /*背景图设置，设置路径在"css/style.css"下的3310行开始，默认关闭，开头为“body {”*/
       /*也可以直接打开下面注释直接覆盖原生的渐变色背景，建议打开背景图之后注释渐变色背景样式“background: linear-gradient(135deg, #00C4FF, #9D1BB2) no-repeat fixed;”和“font-family: 'Helvetica Neue', 'Microsoft Yahei', SimHei, sans-serif;”*/
       body {
@@ -22,53 +22,21 @@
         /*background: url(img/background.jpg) no-repeat fixed center top;*/
       }
 
-      /*以下补充样式用于修复手机浏览下的一些体验*/
-      @media only screen and (max-width: 479px) {
-        div ul li {
-          display: flex;
-          margin: 0 0 0 0;
-        }
-
-        div ul li a {
-          width: 100%;
-        }
-
-        div ul li a img {
-          width: 100%;
-        }
-
-        div ul li a strong {
-          width: 100%;
-        }
-
-        #footer {
-          height: unset;
-        }
-
-        .footer-contents {
-          position: unset;
-        }
-
-        .footer-contents .links .line {
-          margin-top: 20px;
-          margin-right: 10px;
-          margin-bottom: 10px;
-        }
+      .shake {
+        /*打开注释，可调整图标大小，可能会导致特定分辨率下的UI错乱*/
+        /*width: 100px;*/
+        /*height: 100px;*/
+        /*打开注释可以给图标套上一个透明底层框*/
+        /*border-radius: 20%;*/
+        /*border-width: 0;*/
+        /*box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);*/
       }
 
-      @media only screen and (max-width: 349px) {
-        div ul li {
-          width: 33.33%;
-        }
-        body {
-          overflow: auto;
-        }
-      }
-
-      @media only screen and (min-width: 350px) and (max-width: 479px) {
-        div ul li {
-          width: 25%;
-        }
+      .disabled-link {
+        pointer-events: none; /* 阻止鼠标事件 */
+        opacity: 0.3; /* 降低透明度以表示禁用状态 */
+        text-decoration: none; /* 去除下划线效果 */
+        cursor: default; /* 更改鼠标光标 */
       }
     </style>
 </head>
@@ -209,7 +177,8 @@
         <div class="app animated fadeInLeft" id="app">
             <ul>
                 <li>
-                    <a href="#" target="_blank">
+                    <!--添加“class="disabled-link"”属性可以禁用该图标-->
+                    <a href="#" target="_blank" class="disabled-link">
                         <img class="shake" src="img/png/AppStore.png"/>
                         <strong>我的博客</strong></a>
                 </li>
@@ -274,7 +243,8 @@
         <div class="app animated fadeInRight" id="app1">
             <ul>
                 <li>
-                    <a href="#" target="_blank">
+                    <!--添加“class="disabled-link"”属性可以禁用该图标-->
+                    <a href="#" target="_blank" class="disabled-link">
                         <img class="shake" src="img/png/AppStore.png"/>
                         <strong>我的博客</strong></a>
                 </li>
